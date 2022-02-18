@@ -1,5 +1,17 @@
-export const MAX_WORD_LENGTH = 5
-export const MAX_CHALLENGES = 6
-export const ALERT_TIME_MS = 2000
-export const REVEAL_TIME_MS = 350
-export const GAME_LOST_INFO_DELAY = (MAX_WORD_LENGTH + 1) * REVEAL_TIME_MS
+export class Settings {
+  static get MAX_WORD_LENGTH() {
+    return 5
+  }
+  static get MAX_CHALLENGES() {
+    return 6
+  }
+  static get ALERT_TIME_MS() {
+    return 2000
+  }
+  static get REVEAL_TIME_MS() {
+    return 350
+  }
+  static get GAME_LOST_INFO_DELAY() {
+    return (this.MAX_WORD_LENGTH + 1) * this.REVEAL_TIME_MS
+  }
+}

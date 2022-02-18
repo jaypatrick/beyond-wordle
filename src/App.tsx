@@ -9,22 +9,8 @@ import { Keyboard } from './components/keyboard/Keyboard'
 import { InfoModal } from './components/modals/InfoModal'
 import { StatsModal } from './components/modals/StatsModal'
 import { SettingsModal } from './components/modals/SettingsModal'
-import {
-  GAME_TITLE,
-  WIN_MESSAGES,
-  GAME_COPIED_MESSAGE,
-  NOT_ENOUGH_LETTERS_MESSAGE,
-  WORD_NOT_FOUND_MESSAGE,
-  CORRECT_WORD_MESSAGE,
-  HARD_MODE_ALERT_MESSAGE,
-} from './constants/strings'
-import {
-  MAX_WORD_LENGTH,
-  MAX_CHALLENGES,
-  ALERT_TIME_MS,
-  REVEAL_TIME_MS,
-  GAME_LOST_INFO_DELAY,
-} from './constants/settings'
+import { Strings } from './constants/strings'
+import { Settings } from './constants/settings'
 import {
   isWordInWordList,
   isWinningWord,
@@ -77,9 +63,9 @@ function App() {
     if (gameWasWon) {
       setIsGameWon(true)
     }
-    if (loaded.guesses.length === MAX_CHALLENGES && !gameWasWon) {
+    if (loaded.guesses.length === Settings.MAX_CHALLENGES && !gameWasWon) {
       setIsGameLost(true)
-      showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+      showErrorAlert(Strings.CORRECT_WORD_MESSAGE(solution), {
         persist: true,
       })
     }
@@ -126,7 +112,7 @@ function App() {
       setIsHardMode(isHard)
       localStorage.setItem('gameMode', isHard ? 'hard' : 'normal')
     } else {
-      showErrorAlert(HARD_MODE_ALERT_MESSAGE)
+      showErrorAlert(Strings.HARD_MODE_ALERT_MESSAGE)
     }
   }
 
@@ -142,8 +128,10 @@ function App() {
   useEffect(() => {
     if (isGameWon) {
       const winMessage =
-        WIN_MESSAGES[Math.floor(Math.random() * WIN_MESSAGES.length)]
-      const delayMs = REVEAL_TIME_MS * MAX_WORD_LENGTH
+        Strings.WIN_MESSAGES[
+          Math.floor(Math.random() * Strings.WIN_MESSAGES.length)
+        ]
+      const delayMs = Settings.REVEAL_TIME_MS * Settings.MAX_WORD_LENGTH
 
       showSuccessAlert(winMessage, {
         delayMs,
@@ -154,14 +142,14 @@ function App() {
     if (isGameLost) {
       setTimeout(() => {
         setIsStatsModalOpen(true)
-      }, GAME_LOST_INFO_DELAY)
+      }, Settings.GAME_LOST_INFO_DELAY)
     }
   }, [isGameWon, isGameLost, showSuccessAlert])
 
   const onChar = (value: string) => {
     if (
-      currentGuess.length < MAX_WORD_LENGTH &&
-      guesses.length < MAX_CHALLENGES &&
+      currentGuess.length < Settings.MAX_WORD_LENGTH &&
+      guesses.length < Settings.MAX_CHALLENGES &&
       !isGameWon
     ) {
       setCurrentGuess(`${currentGuess}${value}`)
@@ -176,20 +164,20 @@ function App() {
     if (isGameWon || isGameLost) {
       return
     }
-    if (!(currentGuess.length === MAX_WORD_LENGTH)) {
-      showErrorAlert(NOT_ENOUGH_LETTERS_MESSAGE)
+    if (!(currentGuess.length === Settings.MAX_WORD_LENGTH)) {
+      showErrorAlert(Strings.NOT_ENOUGH_LETTERS_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
         setCurrentRowClass('')
-      }, ALERT_TIME_MS)
+      }, Settings.ALERT_TIME_MS)
     }
 
     if (!isWordInWordList(currentGuess)) {
-      showErrorAlert(WORD_NOT_FOUND_MESSAGE)
+      showErrorAlert(Strings.WORD_NOT_FOUND_MESSAGE)
       setCurrentRowClass('jiggle')
       return setTimeout(() => {
         setCurrentRowClass('')
-      }, ALERT_TIME_MS)
+      }, Settings.ALERT_TIME_MS)
     }
 
     // enforce hard mode - all guesses must contain all previously revealed letters
@@ -200,7 +188,7 @@ function App() {
         setCurrentRowClass('jiggle')
         return setTimeout(() => {
           setCurrentRowClass('')
-        }, ALERT_TIME_MS)
+        }, Settings.ALERT_TIME_MS)
       }
     }
 
@@ -209,13 +197,13 @@ function App() {
     // chars have been revealed
     setTimeout(() => {
       setIsRevealing(false)
-    }, REVEAL_TIME_MS * MAX_WORD_LENGTH)
+    }, Settings.REVEAL_TIME_MS * Settings.MAX_WORD_LENGTH)
 
     const winningWord = isWinningWord(currentGuess)
 
     if (
-      currentGuess.length === MAX_WORD_LENGTH &&
-      guesses.length < MAX_CHALLENGES &&
+      currentGuess.length === Settings.MAX_WORD_LENGTH &&
+      guesses.length < Settings.MAX_CHALLENGES &&
       !isGameWon
     ) {
       setGuesses([...guesses, currentGuess])
@@ -226,12 +214,12 @@ function App() {
         return setIsGameWon(true)
       }
 
-      if (guesses.length === MAX_CHALLENGES - 1) {
+      if (guesses.length === Settings.MAX_CHALLENGES - 1) {
         setStats(addStatsForCompletedGame(stats, guesses.length + 1))
         setIsGameLost(true)
-        showErrorAlert(CORRECT_WORD_MESSAGE(solution), {
+        showErrorAlert(Strings.CORRECT_WORD_MESSAGE(solution), {
           persist: true,
-          delayMs: REVEAL_TIME_MS * MAX_WORD_LENGTH + 1,
+          delayMs: Settings.REVEAL_TIME_MS * Settings.MAX_WORD_LENGTH + 1,
         })
       }
     }
@@ -241,7 +229,7 @@ function App() {
     <div className="pt-2 pb-8 max-w-7xl mx-auto sm:px-6 lg:px-8">
       <div className="flex w-80 mx-auto items-center mb-8 mt-20">
         <h1 className="text-xl ml-2.5 grow font-bold dark:text-white">
-          {GAME_TITLE}
+          {Strings.GAME_TITLE}
         </h1>
         <InformationCircleIcon
           className="h-6 w-6 mr-2 cursor-pointer dark:stroke-white"
@@ -280,7 +268,7 @@ function App() {
         gameStats={stats}
         isGameLost={isGameLost}
         isGameWon={isGameWon}
-        handleShare={() => showSuccessAlert(GAME_COPIED_MESSAGE)}
+        handleShare={() => showSuccessAlert(Strings.GAME_COPIED_MESSAGE)}
         isHardMode={isHardMode}
       />
       <SettingsModal

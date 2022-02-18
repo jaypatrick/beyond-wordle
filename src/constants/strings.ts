@@ -1,24 +1,62 @@
-export const GAME_TITLE = process.env.REACT_APP_GAME_NAME!
+export class Strings {
+  static get GAME_TITLE(): string {
+    return process.env.REACT_APP_GAME_NAME?.toString()!
+  }
+  static get WIN_MESSAGES() {
+    return ['Great Job!', 'Awesome', 'Well done!']
+  }
+  static get GAME_COPIED_MESSAGE() {
+    return 'Game copied to clipboard'
+  }
+  static get NOT_ENOUGH_LETTERS_MESSAGE() {
+    return 'Not enough letters'
+  }
+  static get WORD_NOT_FOUND_MESSAGE() {
+    return 'Word not found'
+  }
+  static get HARD_MODE_ALERT_MESSAGE() {
+    return 'Hard Mode can only be enabled at the start!'
+  }
+  static CORRECT_WORD_MESSAGE(solution: string) {
+    return `The word was ${solution}`
+  }
+  static WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
+    `Must use ${guess} in position ${position}`
 
-export const WIN_MESSAGES = ['Great Job!', 'Awesome', 'Well done!']
-export const GAME_COPIED_MESSAGE = 'Game copied to clipboard'
-export const NOT_ENOUGH_LETTERS_MESSAGE = 'Not enough letters'
-export const WORD_NOT_FOUND_MESSAGE = 'Word not found'
-export const HARD_MODE_ALERT_MESSAGE =
-  'Hard Mode can only be enabled at the start!'
-export const CORRECT_WORD_MESSAGE = (solution: string) =>
-  `The word was ${solution}`
-export const WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
-  `Must use ${guess} in position ${position}`
-export const NOT_CONTAINED_MESSAGE = (letter: string) =>
-  `Guess must contain ${letter}`
-export const ENTER_TEXT = 'Enter'
-export const DELETE_TEXT = 'Delete'
-export const STATISTICS_TITLE = 'Statistics'
-export const GUESS_DISTRIBUTION_TEXT = 'Guess Distribution'
-export const NEW_WORD_TEXT = 'New word in'
-export const SHARE_TEXT = 'Share'
-export const TOTAL_TRIES_TEXT = 'Total tries'
-export const SUCCESS_RATE_TEXT = 'Success rate'
-export const CURRENT_STREAK_TEXT = 'Current streak'
-export const BEST_STREAK_TEXT = 'Best streak'
+  static NOT_CONTAINED_MESSAGE = (letter: string) =>
+    `Guess must contain ${letter}`
+
+  static get ENTER_TEXT() {
+    return 'Enter'
+  }
+  static get DELETE_TEXT() {
+    return 'Delete'
+  }
+  static get STATISTICS_TITLE() {
+    return 'Statistics'
+  }
+  static get GUESS_DISTRIBUTION_TEXT() {
+    return 'Guess Distribution'
+  }
+  static get NEW_WORD_TEXT() {
+    return 'New word in'
+  }
+  static get SHARE_TEXT() {
+    return 'Share'
+  }
+  static get TOTAL_TRIES_TEXT() {
+    return 'Total tries'
+  }
+  static get SUCCESS_RATE_TEXT() {
+    return 'Success rate'
+  }
+  static get CURRENT_STREAK_TEXT() {
+    return 'Current streak'
+  }
+  static get BEST_STREAK_TEXT() {
+    return 'Best streak'
+  }
+  static get GOOGLE_ANALYTICS_ID() {
+    return process.env.REACT_APP_GOOGLE_MEASUREMENT_ID!
+  }
+}

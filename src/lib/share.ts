@@ -1,8 +1,8 @@
 import { getGuessStatuses } from './statuses'
 import { solutionIndex } from './words'
-import { GAME_TITLE } from '../constants/strings'
+import { Strings } from '../constants/strings'
 import { getStoredIsHighContrastMode } from './localStorage'
-import { MAX_CHALLENGES } from '../constants/settings'
+import { Settings } from '../constants/settings'
 
 export const shareStatus = (
   guesses: string[],
@@ -10,10 +10,9 @@ export const shareStatus = (
   isHardMode: boolean
 ) => {
   navigator.clipboard.writeText(
-    `${GAME_TITLE} ${solutionIndex} ${
-      lost ? 'X' : guesses.length
-    }/${MAX_CHALLENGES}${isHardMode ? '*' : ''}\n\n` +
-      generateEmojiGrid(guesses)
+    `${Strings.GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${
+      Settings.MAX_CHALLENGES
+    }${isHardMode ? '*' : ''}\n\n` + generateEmojiGrid(guesses)
   )
 }
 
