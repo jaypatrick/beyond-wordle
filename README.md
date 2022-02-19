@@ -1,8 +1,8 @@
-# React Wordle
+# Typescript Wordle with React
 
-This is a clone project of the popular word guessing game we all know and love. Made using React, Typescript, and Tailwind.
+This is a Typescript + React version of Wordle, with a simple REST backend coming soon to allow for multiple puzzles per day, swapping out dictionaries, and making localization easier. Ultimately this will be built out entirely as a REST backend to provide configurable puzzles as a service.
 
-[**Try out the demo!**](https://reactle.vercel.app/)
+[**Try out the demo!**](https://wordle.jaysonknight.com/)
 
 ## Build and run
 
