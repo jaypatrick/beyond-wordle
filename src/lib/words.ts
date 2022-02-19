@@ -1,6 +1,6 @@
 import { WORDS } from '../constants/wordlist'
 import { VALID_GUESSES } from '../constants/validGuesses'
-import { WRONG_SPOT_MESSAGE, NOT_CONTAINED_MESSAGE } from '../constants/strings'
+import { Strings } from '../constants/strings'
 import { getGuessStatuses } from './statuses'
 
 export const isWordInWordList = (word: string) => {
@@ -31,7 +31,7 @@ export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
       lettersLeftArray.push(guess[i])
     }
     if (statuses[i] === 'correct' && word[i] !== guess[i]) {
-      return WRONG_SPOT_MESSAGE(guess[i], i + 1)
+      return Strings.WRONG_SPOT_MESSAGE(guess[i], i + 1)
     }
   }
 
@@ -46,7 +46,7 @@ export const findFirstUnusedReveal = (word: string, guesses: string[]) => {
   }
 
   if (lettersLeftArray.length > 0) {
-    return NOT_CONTAINED_MESSAGE(lettersLeftArray[0])
+    return Strings.NOT_CONTAINED_MESSAGE(lettersLeftArray[0])
   }
   return false
 }

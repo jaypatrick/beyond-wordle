@@ -5,7 +5,7 @@ import {
   useContext,
   useState,
 } from 'react'
-import { ALERT_TIME_MS } from '../constants/settings'
+import { Settings } from '../constants/settings'
 
 type AlertStatus = 'success' | 'error' | undefined
 
@@ -50,7 +50,7 @@ export const AlertProvider = ({ children }: Props) => {
         delayMs = 0,
         persist,
         onClose,
-        durationMs = ALERT_TIME_MS,
+        durationMs = Settings.ALERT_TIME_MS,
       } = options || {}
 
       setTimeout(() => {
