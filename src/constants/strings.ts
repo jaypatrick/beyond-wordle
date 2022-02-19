@@ -1,6 +1,6 @@
 export class Strings {
   static get GAME_TITLE(): string {
-    return process.env.REACT_APP_GAME_NAME?.toString()!
+    return `${process.env.REACT_APP_GAME_NAME?.toString()!} ${process.env.REACT_APP_GAME_DESCRIPTION_ADDENDUM?.toString()!}`
   }
   static get WIN_MESSAGES() {
     return ['Great Job!', 'Awesome', 'Well done!']
