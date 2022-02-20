@@ -73,12 +73,19 @@ function App() {
   })
 
   const [stats, setStats] = useState(() => loadStats())
-
+  const [data, setData] = useState('')
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
       ? localStorage.getItem('gameMode') === 'hard'
       : false
   )
+  useEffect(() => {
+    ;(async function () {
+      let { text } = await (await fetch(`/api/message`)).json()
+      text = text + data.toString()
+      setData(text)
+    })()
+  })
 
   useEffect(() => {
     // if no game state on load,
