@@ -128,6 +128,7 @@ _Want to add one to the list? Just make a pull request or [let us know via a com
 - Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) arrays to only include words of the new length.
 
 ### How can I create a version in another language?
+#### (more streamlined localization process coming soon)
 
 - In [.env](.env):
   - Update the title and the description
