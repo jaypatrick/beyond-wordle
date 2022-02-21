@@ -1,5 +1,6 @@
 import { Settings } from '../../constants/settings'
 import { Cell } from './Cell'
+import { unicodeSplit } from '../../lib/words'
 
 type Props = {
   guess: string
@@ -7,7 +8,7 @@ type Props = {
 }
 
 export const CurrentRow = ({ guess, className }: Props) => {
-  const splitGuess = guess.split('')
+  const splitGuess = unicodeSplit(guess)
   const emptyCells = Array.from(
     Array(Settings.MAX_WORD_LENGTH - splitGuess.length)
   )
