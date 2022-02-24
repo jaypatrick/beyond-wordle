@@ -53,6 +53,7 @@ Open [http://localhost](http://localhost) in browser.
 - [Parolle.it](https://parolle.it): Italian
 - [Pashtoodle](https://pashtoodle.lingdocs.com): Pashto
 - [Persian](https://www.persian-wordle.ir/): Persian (Farsi)
+- [Pinyin](https://www.pinyindle.com/): Pinyin (romanization system for Mandarin Chinese)
 - [Rudle](https://rudle.vercel.app): Russian
 - [Sindhal](https://hellosindh.com/sindhal): Sindhi
 - [Szózat](https://szozat.miklosdanka.com/): Hungarian
@@ -116,6 +117,7 @@ Open [http://localhost](http://localhost) in browser.
 - [Opsle](https://opsle.vercel.app/): Ops
 - [Passwordle](https://passwordle.sp8c3.com/): Passwords
 - [Primel](https://converged.yt/primel/): Prime numbers
+- [Qwordle](https://qwordle.bhat.ca/): Quantum version of Wordle (uses entangled word-pairs)
 - [Rundle](https://furstenheim.github.io/react-wordle/): Like wordle, but only last three guesses are considered.
 - [Stockle](https://stockle.win/): Guess the stock or ETF
 - [Syscordle](https://nezza.github.io/syscordle/): SYSCALL
