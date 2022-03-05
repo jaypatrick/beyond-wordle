@@ -1,4 +1,4 @@
-# Typescript Wordle with React
+# Typescript Wordle: Beyond Wordle ('continuous play' mode coming soon!)
 
 This is a Typescript + React version of Wordle, with a simple REST backend coming soon to allow for multiple puzzles per day, swapping out dictionaries, and making localization easier. Ultimately this will be built out entirely as a REST backend to provide configurable puzzles as a service.
 
