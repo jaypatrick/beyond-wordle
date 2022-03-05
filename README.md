@@ -2,7 +2,7 @@
 
 This is a Typescript + React version of Wordle, with a simple REST backend coming soon to allow for multiple puzzles per day, swapping out dictionaries, and making localization easier. Ultimately this will be built out entirely as a REST backend to provide configurable puzzles as a service.
 
-[**Try out the demo!**](https://wordle.jaysonknight.com/)
+[**Try out the demo!**](https://wordle.jaysonknight.com/) (please note that this package is a work in progress)
 
 ## Build and run
 
@@ -113,6 +113,7 @@ Open [http://localhost](http://localhost) in browser.
 - [Jazle](https://jazle.quest/): Javascript
 - [Mathler](https://www.mathler.com/): Find the solution that equals X
 - [Morsel](https://plingbang.github.io/morsel/): Morse
+- [Nerdle](https://nerdlegame.com/): Math equations
 - [Numble](https://rbrignall.github.io/numble/): Maths
 - [Opsle](https://opsle.vercel.app/): Ops
 - [Passwordle](https://passwordle.sp8c3.com/): Passwords
@@ -129,13 +130,11 @@ _Want to add one to the list? Just make a pull request or [let us know via a com
 
 ### How can I change the length of a guess?
 
-- Update the `MAX_WORD_LENGTH` variable in [src/constants/settings.ts](src/constants/settings.ts) to the desired length.
-- Update the `WORDS` array in [src/constants/wordlist.ts](src/constants/wordlist.ts) to only include words of the new length.
-- Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) arrays to only include words of the new length.
+- Update the `MAX_WORD_LENGTH` variable in [src/constants/settings.ts](src/constants/settings.ts) to the desired length. Currently, it defaults to 5 (which is the length of words in the hardcoded dictionary). Once the WordsApi ('beagle' release) backend is complete, this can hypothetically be any value so long as the backend dictionary contains those words.
+- Update the `WORDS` array in [src/constants/wordlist.ts](src/constants/wordlist.ts) to only include words of the new length. Once the WordsApi is complete, there will be no need for this, except to mirror the existing list for "once a day" mode.
+- Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) arrays to only include words of the new length. As with the above, this will go away for continuous mode once WordsApi ('beagle' release) is complete. Will be kept in another format for "once a day" mode to keep with existing lists.
 
-### How can I create a version in another language?
-
-#### (more streamlined localization process coming soon)
+### How can I create a version in another language? *** Localization engine coming soon! ***
 
 - In [.env](.env):
   - Update the title and the description
