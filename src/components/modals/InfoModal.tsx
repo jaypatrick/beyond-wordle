@@ -59,9 +59,9 @@ export const InfoModal = ({ isOpen, handleClose }: Props) => {
 
       <p className="mt-6 italic text-sm text-gray-500 dark:text-gray-300">
         This is an open source version of the word guessing game we all know and
-        love -{' '}
+        love, made with React + WordsAPI dictionary. -{' '}
         <a
-          href="https://github.com/cwackerfuss/react-wordle"
+          href="https://github.com/jaypatrick/react-wordle"
           className="underline font-bold"
         >
           check out the code here

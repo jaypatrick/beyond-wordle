@@ -2,6 +2,12 @@ import { solution, unicodeSplit } from './words'
 
 export type CharStatus = 'absent' | 'present' | 'correct'
 
+export enum CharStatusEnum {
+  absent = 'absent',
+  present = 'present',
+  correct = 'correct',
+}
+
 export const getStatuses = (
   guesses: string[]
 ): { [key: string]: CharStatus } => {
@@ -23,6 +29,8 @@ export const getStatuses = (
       if (charObj[letter] !== 'correct') {
         //make status present
         return (charObj[letter] = 'present')
+      } else {
+        return charObj // COULD BE A SOURCE OF BUGS, TEST!
       }
     })
   })
@@ -34,6 +42,7 @@ export const getGuessStatuses = (guess: string): CharStatus[] => {
   const splitSolution = unicodeSplit(solution)
   const splitGuess = unicodeSplit(guess)
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const solutionCharsTaken = splitSolution.map((_) => false)
 
   const statuses: CharStatus[] = Array.from(Array(guess.length))

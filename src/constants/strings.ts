@@ -1,6 +1,17 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 export class Strings {
   static get GAME_TITLE(): string {
-    return `${process.env.REACT_APP_GAME_NAME?.toString()!} ${process.env.REACT_APP_GAME_DESCRIPTION_ADDENDUM?.toString()!}`
+    return `${this.GAME_NAME} ${this.GAME_DESCRIPTION_ADDENDUM}`
+  }
+  static get GAME_NAME(): string {
+    return `${process.env.REACT_APP_WORDLE_GAME_NAME?.toString()!}`
+  }
+  static get GAME_DESCRIPTION(): string {
+    return `${process.env.REACT_APP_WORDLE_GAME_DESCRIPTION?.toString()!}`
+  }
+  static get GAME_DESCRIPTION_ADDENDUM(): string {
+    return `${process.env.REACT_APP_WORDLE_GAME_DESCRIPTION_ADDENDUM?.toString()!}`
   }
   static get WIN_MESSAGES() {
     return ['Great Job!', 'Awesome', 'Well done!']
@@ -17,7 +28,13 @@ export class Strings {
   static get HARD_MODE_ALERT_MESSAGE() {
     return 'Hard Mode can only be enabled at the start!'
   }
-  static CORRECT_WORD_MESSAGE(solution: string) {
+  static get HARD_MODE_DESCRIPTION() {
+    return 'Any revealed hints must be used in subsequent guesses'
+  }
+  static get HIGH_CONTRAST_MODE_DESCRIPTION() {
+    return 'For improved color vision'
+  }
+  static CORRECT_WORD_MESSAGE = (solution: string) => {
     return `The word was ${solution}`
   }
   static WRONG_SPOT_MESSAGE = (guess: string, position: number) =>
@@ -57,6 +74,6 @@ export class Strings {
     return 'Best streak'
   }
   static get GOOGLE_ANALYTICS_ID() {
-    return process.env.REACT_APP_GOOGLE_MEASUREMENT_ID!
+    return process.env.REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID!
   }
 }

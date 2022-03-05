@@ -16,13 +16,14 @@ export const Grid = ({
   isRevealing,
   currentRowClassName,
 }: Props) => {
+  const challengeCount = Settings.MAX_CHALLENGES
   const empties =
-    guesses.length < Settings.MAX_CHALLENGES - 1
-      ? Array.from(Array(Settings.MAX_CHALLENGES - 1 - guesses.length))
+    guesses.length < challengeCount - 1
+      ? Array.from(Array(challengeCount - 1 - guesses.length))
       : []
 
   return (
-    <div className="pb-6">
+    <>
       {guesses.map((guess, i) => (
         <CompletedRow
           key={i}
@@ -30,12 +31,12 @@ export const Grid = ({
           isRevealing={isRevealing && guesses.length - 1 === i}
         />
       ))}
-      {guesses.length < Settings.MAX_CHALLENGES && (
+      {guesses.length < challengeCount && (
         <CurrentRow guess={currentGuess} className={currentRowClassName} />
       )}
       {empties.map((_, i) => (
         <EmptyRow key={i} />
       ))}
-    </div>
+    </>
   )
 }

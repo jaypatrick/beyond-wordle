@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
+/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { solution } from '../lib/words'
 
 export class Settings {
@@ -5,7 +7,10 @@ export class Settings {
     return solution.length
   }
   static get MAX_CHALLENGES() {
-    return solution.length + 3
+    return solution.length + parseInt(this.REACT_APP_WORDLE_MAX_CHALLENGES)
+  }
+  static get REACT_APP_WORDLE_MAX_CHALLENGES() {
+    return process.env.REACT_APP_WORDLE_MAX_CHALLENGES?.toString()!
   }
   static get ALERT_TIME_MS() {
     return 2000
@@ -18,5 +23,43 @@ export class Settings {
   }
   static get WELCOME_INFO_MODAL_MS() {
     return 350
+  }
+
+  // WORDSAPI SETTINGS
+  static get REACT_APP_WORDS_API_BASE_URL() {
+    return process.env.REACT_APP_WORDS_API_BASE_URL?.toString()!
+  }
+  static get REACT_APP_WORDS_API_REQUEST_ENCODING() {
+    return process.env.REACT_APP_WORDS_API_REQUEST_ENCODING?.toString()!
+  }
+  static get REACT_APP_WORDS_API_XSRF_COOKIE_NAME() {
+    return process.env.REACT_APP_WORDS_API_XSRF_COOKIE_NAME?.toString()!
+  }
+  static get REACT_APP_WORDS_API_MAX_CONTENT_LENGTH() {
+    return process.env.REACT_APP_WORDS_API_MAX_CONTENT_LENGTH?.toString()!
+  }
+  static get REACT_APP_WORDS_API_MAX_BODY_LENGTH() {
+    return process.env.REACT_APP_WORDS_API_MAX_BODY_LENGTH?.toString()!
+  }
+  static get REACT_APP_WORDS_API_MAX_REDIRECTS() {
+    return process.env.REACT_APP_WORDS_API_MAX_REDIRECTS?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_HOST() {
+    return process.env.REACT_APP_WORDS_API_HEADER_HOST?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_KEY() {
+    return process.env.REACT_APP_WORDS_API_HEADER_KEY?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_HOST_LABEL() {
+    return process.env.REACT_APP_WORDS_API_HEADER_HOST_LABEL?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_DEFAULT_APP_LABEL() {
+    return process.env.REACT_APP_WORDS_API_HEADER_DEFAULT_APP_LABEL?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_DEFAULT_APP() {
+    return process.env.REACT_APP_WORDS_API_HEADER_DEFAULT_APP?.toString()!
+  }
+  static get REACT_APP_WORDS_API_HEADER_KEY_LABEL() {
+    return process.env.REACT_APP_WORDS_API_HEADER_KEY_LABEL?.toString()!
   }
 }

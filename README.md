@@ -134,11 +134,12 @@ _Want to add one to the list? Just make a pull request or [let us know via a com
 - Update the `VALID_GUESSES` array in [src/constants/validGuesses.ts](src/constants/validGuesses.ts) arrays to only include words of the new length.
 
 ### How can I create a version in another language?
+
 #### (more streamlined localization process coming soon)
 
 - In [.env](.env):
   - Update the title and the description
-  - Set the `REACT_APP_LOCALE_STRING` to your locale
+  - Set the `REACT_APP_WORDLE_LOCALE_STRING` to your locale
 - In [public/index.html](public/index.html):
   - Update the "You need to enable JavaScript" message
   - Update the language attribute in the HTML tag
@@ -159,7 +160,7 @@ This repository includes support for Google Analytics or [Plausible Analytics](h
 To enable Google Analytics:
 
 - Create a Google Analytics 4 property and obtain the measurement ID (of the format `G-XXXXXXXXXX`)
-- In [.env](.env), add `REACT_APP_GOOGLE_MEASUREMENT_ID=G-XXXXXXXXXX`
+- In [.env](.env), add `REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID=G-XXXXXXXXXX`
 
 Keep in mind that your region might have legislation about obtaining a user's consent before enabling trackers. This is up to downstream repos to implement.
 
