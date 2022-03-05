@@ -1,0 +1,193 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>wordle-wthout-limits</title><meta name="description" content="Documentation for wordle-wthout-limits"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">wordle-wthout-limits</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>wordle-wthout-limits</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<a href="#typescript-wordle-with-react" id="typescript-wordle-with-react" style="color: inherit; text-decoration: none;">
+  <h1>Typescript Wordle with React</h1>
+</a>
+<p>This is a Typescript + React version of Wordle, with a simple REST backend coming soon to allow for multiple puzzles per day, swapping out dictionaries, and making localization easier. Ultimately this will be built out entirely as a REST backend to provide configurable puzzles as a service.</p>
+<p><a href="https://wordle.jaysonknight.com/"><strong>Try out the demo!</strong></a></p>
+
+<a href="#build-and-run" id="build-and-run" style="color: inherit; text-decoration: none;">
+  <h2>Build and run</h2>
+</a>
+
+<a href="#to-run-locally" id="to-run-locally" style="color: inherit; text-decoration: none;">
+  <h3>To Run Locally:</h3>
+</a>
+<p>Clone the repository and perform the following command line actions:</p>
+<pre><code class="language-bash"><span class="hl-0">$&gt; </span><span class="hl-1">cd</span><span class="hl-0"> react-wordle</span><br/><span class="hl-0">$&gt; npm install</span><br/><span class="hl-0">$&gt; npm run start</span>
+</code></pre>
+
+<a href="#to-buildrun-docker-container" id="to-buildrun-docker-container" style="color: inherit; text-decoration: none;">
+  <h3>To build/run docker container:</h3>
+</a>
+
+<a href="#development" id="development" style="color: inherit; text-decoration: none;">
+  <h4>Development</h4>
+</a>
+<pre><code class="language-bash"><span class="hl-0">$&gt; docker build -t game:dev </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 3000:3000 game:dev</span>
+</code></pre>
+<p>Open <a href="http://localhost:3000">http://localhost:3000</a> in browser.</p>
+
+<a href="#production" id="production" style="color: inherit; text-decoration: none;">
+  <h4>Production</h4>
+</a>
+<pre><code class="language-bash"><span class="hl-0">$&gt; docker build --target=prod -t game:prod </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 80:80 game:prod</span>
+</code></pre>
+<p>Open <a href="http://localhost">http://localhost</a> in browser.</p>
+
+<a href="#projects-built-using-this-repo" id="projects-built-using-this-repo" style="color: inherit; text-decoration: none;">
+  <h2>Projects built using this repo</h2>
+</a>
+
+<a href="#other-languages" id="other-languages" style="color: inherit; text-decoration: none;">
+  <h3>Other languages</h3>
+</a>
+<ul>
+<li><a href="https://arwordle.netlify.app/">Arwordle</a>: Arabic</li>
+<li><a href="https://www.boludle.com/">Boludle</a>: Argentinian</li>
+<li><a href="https://gerdle.vext.co.uk/">Gerdle</a>: Cornish (Kernowek)</li>
+<li><a href="https://keclap.xyz/">Keclap</a>: Sundanese</li>
+<li><a href="https://kelmaly.com/">Kelmaly</a>: Arabic</li>
+<li><a href="https://wordle.latindictionary.io/">Latindictionary.io</a>: Latin</li>
+<li><a href="https://lexoula.com/">Lexoula</a>: Ελληνικά (Greek)</li>
+<li><a href="https://malay-wordle.netlify.app/">Malay</a>: Bahasa Malaysia</li>
+<li><a href="https://mondle.vercel.app/">Mondle</a>: Mongolian</li>
+<li><a href="https://parolette.netlify.app/">Parolette</a>: Italian</li>
+<li><a href="https://parolle.it">Parolle.it</a>: Italian</li>
+<li><a href="https://pashtoodle.lingdocs.com">Pashtoodle</a>: Pashto</li>
+<li><a href="https://www.persian-wordle.ir/">Persian</a>: Persian (Farsi)</li>
+<li><a href="https://www.pinyindle.com/">Pinyin</a>: Pinyin (romanization system for Mandarin Chinese)</li>
+<li><a href="https://rudle.vercel.app">Rudle</a>: Russian</li>
+<li><a href="https://hellosindh.com/sindhal">Sindhal</a>: Sindhi</li>
+<li><a href="https://szozat.miklosdanka.com/">Szózat</a>: Hungarian</li>
+<li><a href="https://tau.taigi.info/">Tàu Tâi-gí (Taigi Wordle)</a>: Taigi (Taiwanese)</li>
+<li><a href="https://tlembung.vercel.app/">Tlembung</a>: Japanese</li>
+<li><a href="https://tugma.vercel.app">Tugma</a>: Hiligaynon (spoken in the Philippines)</li>
+<li><a href="https://goroh.pp.ua/games/wordle">Ukrainian</a>: Ukrainian</li>
+<li><a href="https://urdle.chaoticity.com/">Urdle</a>: Urdu</li>
+<li><a href="https://wordle.lielakeda.lv/">Vārdulis</a>: Latvian</li>
+<li><a href="https://word-leh.com">Word-leh!</a>: Singlish</li>
+<li><a href="http://wordlar.uz/">Wordlar</a>: Uzbek</li>
+<li><a href="https://elahmo.github.io/wordle/">Wordle (BOS)</a>: Bosnian</li>
+<li><a href="https://wordle-es.xavier.cc">Wordle (Spanish)</a>: Spanish/Espanol</li>
+<li><a href="https://wordle-ro.sirb.net/">Wordle-RO</a>: Romanian</li>
+<li><a href="https://wortel.wrintiewaar.co.za">Wortel</a>: Afrikaans</li>
+<li><a href="https://woertchen.sofacoach.de">Wörtchen</a>: German</li>
+<li><a href="https://sgwordle.now.sh/">SGWordle</a>: Swiss German</li>
+<li><a href="https://kelma.mt">kelma.mt</a>: Maltese</li>
+<li><a href="https://slivce.com/">Слівце</a>: Ukrainian</li>
+<li><a href="https://punjabipuzzle.netlify.app/">ਪੰਜਾਬੀ</a>: Punjabi</li>
+<li><a href="https://omtamil.com/soladle">சொல்லாடல் Soladle</a>: Tamil</li>
+<li><a href="https://zedaizd.github.io/zh-char-puzzle/">字知之明</a>: Traditional Chinese</li>
+<li><a href="https://belorin.github.io/">꼬들 - 한국어</a>: Korean</li>
+<li><a href="https://nakosung.github.io/wordle/">한글 풀어쓰기 5자</a>: Korean</li>
+</ul>
+
+<a href="#fun-themes" id="fun-themes" style="color: inherit; text-decoration: none;">
+  <h3>Fun themes</h3>
+</a>
+<ul>
+<li><a href="https://tirea.learnnavi.org/wordle">&#39;en si lì&#39;ur</a>: Na&#39;vi, the constructed language from James Cameron&#39;s AVATAR (2009)</li>
+<li><a href="https://airportle.scottscheapflights.com/">Airportle</a>: Airport Codes</li>
+<li><a href="https://anidal-abrarhayat.web.app/">Anidal</a>: Animals</li>
+<li><a href="https://birdle.dev">Birdle - Emojis</a>: Bird emojis</li>
+<li><a href="https://www.creek-birdle.com/">Birdle</a>: Birds</li>
+<li><a href="https://buildly.procurepro.co/">Buildly</a>: Construction themed</li>
+<li><a href="https://crosswordle.mekoppe.com/">Crosswordle</a>: Crossword mashup</li>
+<li><a href="https://dundle.dunmiffcord.com/">Dundle</a>: The Office</li>
+<li><a href="https://ffxivrdle.com/">FFXIVrdle</a>: Final Fantasy XIV</li>
+<li><a href="https://www.harrypotterwordle.com/">Harry Potter</a>: Harry Potter</li>
+<li><a href="https://jojo-news.com/fun/jojodle/">JoJodle</a>: JoJo’s Bizarre Adventure</li>
+<li><a href="https://mahjong-handle.update.sh/">Mahjong Handle</a>: Mahjong Hands</li>
+<li><a href="https://filmle.now.sh/">Filmle</a>: Movie titles</li>
+<li><a href="https://movie-wordle.vercel.app">Movie Wordle</a>: Bollywood</li>
+<li><a href="https://murdle.vercel.app/">Murdle</a>: Spooky hangman mashup</li>
+<li><a href="https://kikychow.github.io/poker-wordle/">Poker Handle</a>: Poker</li>
+<li><a href="https://quettale.vercel.app/">Quettale</a>: Quenya, Elven language in LOTR</li>
+<li><a href="https://radiole.vercel.app/">Radiole</a>: Radio-themed (for World Radio Day)</li>
+<li><a href="https://squirdle-inky.vercel.app/">Squirdle</a>: Pokeman</li>
+<li><a href="https://www.taylordle.com/">Taylordle</a>: Taylor Swift</li>
+<li><a href="https://treklegame.com">Trekle</a>: Star Trek</li>
+<li><a href="https://meetmeinouter.space/wordle/">Weedel</a>: Video game characters</li>
+<li><a href="https://www.wordle.cl">Wordle.cl</a>: Chilean modisms, cities, places</li>
+<li><a href="https://wrdl-abae.vercel.app/">Wrdl</a>: Words that are 5 letters long after getting rid of their vowels</li>
+</ul>
+
+<a href="#math-acronyms-science-tech-and-more" id="math-acronyms-science-tech-and-more" style="color: inherit; text-decoration: none;">
+  <h3>Math, Acronyms, Science, Tech, and more</h3>
+</a>
+<ul>
+<li><a href="https://github.com/asirota/wordle-ai">AI-powered</a>: Includes an AI component</li>
+<li><a href="https://andrewholding.github.io/gene-wordle/">Genel</a>: Gene symbols</li>
+<li><a href="https://jazle.quest/">Jazle</a>: Javascript</li>
+<li><a href="https://www.mathler.com/">Mathler</a>: Find the solution that equals X</li>
+<li><a href="https://plingbang.github.io/morsel/">Morsel</a>: Morse</li>
+<li><a href="https://rbrignall.github.io/numble/">Numble</a>: Maths</li>
+<li><a href="https://opsle.vercel.app/">Opsle</a>: Ops</li>
+<li><a href="https://passwordle.sp8c3.com/">Passwordle</a>: Passwords</li>
+<li><a href="https://converged.yt/primel/">Primel</a>: Prime numbers</li>
+<li><a href="https://qwordle.bhat.ca/">Qwordle</a>: Quantum version of Wordle (uses entangled word-pairs)</li>
+<li><a href="https://furstenheim.github.io/react-wordle/">Rundle</a>: Like wordle, but only last three guesses are considered.</li>
+<li><a href="https://stockle.win/">Stockle</a>: Guess the stock or ETF</li>
+<li><a href="https://nezza.github.io/syscordle/">Syscordle</a>: SYSCALL</li>
+<li><a href="https://unlocodle.collabital.com/">UNLOCOdle</a>: UNLOCODEs</li>
+</ul>
+<p><em>Want to add one to the list? Just make a pull request or <a href="https://github.com/cwackerfuss/react-wordle/issues/120">let us know via a comment here</a></em></p>
+
+<a href="#faq" id="faq" style="color: inherit; text-decoration: none;">
+  <h2>FAQ</h2>
+</a>
+
+<a href="#how-can-i-change-the-length-of-a-guess" id="how-can-i-change-the-length-of-a-guess" style="color: inherit; text-decoration: none;">
+  <h3>How can I change the length of a guess?</h3>
+</a>
+<ul>
+<li>Update the <code>MAX_WORD_LENGTH</code> variable in <a href="src/constants/settings.ts">src/constants/settings.ts</a> to the desired length.</li>
+<li>Update the <code>WORDS</code> array in <a href="src/constants/wordlist.ts">src/constants/wordlist.ts</a> to only include words of the new length.</li>
+<li>Update the <code>VALID_GUESSES</code> array in <a href="src/constants/validGuesses.ts">src/constants/validGuesses.ts</a> arrays to only include words of the new length.</li>
+</ul>
+
+<a href="#how-can-i-create-a-version-in-another-language" id="how-can-i-create-a-version-in-another-language" style="color: inherit; text-decoration: none;">
+  <h3>How can I create a version in another language?</h3>
+</a>
+
+<a href="#more-streamlined-localization-process-coming-soon" id="more-streamlined-localization-process-coming-soon" style="color: inherit; text-decoration: none;">
+  <h4>(more streamlined localization process coming soon)</h4>
+</a>
+<ul>
+<li>In <a href=".env">.env</a>:<ul>
+<li>Update the title and the description</li>
+<li>Set the <code>REACT_APP_WORDLE_LOCALE_STRING</code> to your locale</li>
+</ul>
+</li>
+<li>In <a href="public/index.html">public/index.html</a>:<ul>
+<li>Update the &quot;You need to enable JavaScript&quot; message</li>
+<li>Update the language attribute in the HTML tag</li>
+<li>If the language is written right-to-left, add <code>dir=&quot;rtl&quot;</code> to the HTML tag</li>
+</ul>
+</li>
+<li>Update the name and short name in <a href="public/manifest.json">public/manifest.json</a></li>
+<li>Update the strings in <a href="src/constants/strings.ts">src/constants/strings.ts</a></li>
+<li>Add all of the five letter words in the language to <a href="src/constants/validGuesses.ts">src/constants/validGuesses.ts</a>, replacing the English words</li>
+<li>Add a list of goal words in the language to <a href="src/constants/wordlist.ts">src/constants/wordlist.ts</a>, replacing the English words</li>
+<li>Update the &quot;Settings&quot; modal in <a href="src/components/modals/SettingsModal.tsx">src/components/modals/SettingsModal.tsx</a></li>
+<li>Update the &quot;Info&quot; modal in <a href="src/components/modals/InfoModal.tsx">src/components/modals/InfoModal.tsx</a></li>
+<li>If the language has letters that are not present in English update the keyboard in <a href="src/components/keyboard/Keyboard.tsx">src/components/keyboard/Keyboard.tsx</a></li>
+<li>If the language is written right-to-left, prepend <code>\u202E</code> (the unicode right-to-left override character) to the return statement of the inner function in <code>generateEmojiGrid</code> in <a href="src/lib/share.ts">src/lib/share.ts</a></li>
+</ul>
+
+<a href="#how-can-i-add-usage-tracking" id="how-can-i-add-usage-tracking" style="color: inherit; text-decoration: none;">
+  <h3>How can I add usage tracking?</h3>
+</a>
+<p>This repository includes support for Google Analytics or <a href="https://plausible.io">Plausible Analytics</a>, but, by default, this is disabled.</p>
+<p>To enable Google Analytics:</p>
+<ul>
+<li>Create a Google Analytics 4 property and obtain the measurement ID (of the format <code>G-XXXXXXXXXX</code>)</li>
+<li>In <a href=".env">.env</a>, add <code>REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID=G-XXXXXXXXXX</code></li>
+</ul>
+<p>Keep in mind that your region might have legislation about obtaining a user&#39;s consent before enabling trackers. This is up to downstream repos to implement.</p>
+<p>To enable Plausible Analytics:</p>
+<ul>
+<li>Create a new website with Plausible Analytics with a given domain, e.g. <code>example.app</code></li>
+<li>In <a href=".env">.env</a>, add <code>REACT_APP_PLAUSIBLE_DOMAIN=example.app</code></li>
+</ul>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-function"><a href="modules.html#default" class="tsd-kind-icon">default</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

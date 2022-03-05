@@ -28,5 +28,9 @@
     "jsx": "react-jsx",
     "pretty": true
   },
+  "typedocOptions": {
+    "entryPoints": ["src/app.tsx"],
+    "out": "docs"
+  },
   "include": ["src"]
 }

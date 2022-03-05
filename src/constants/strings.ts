@@ -13,8 +13,11 @@ export class Strings {
   static get GAME_DESCRIPTION_ADDENDUM(): string {
     return `${process.env.REACT_APP_WORDLE_GAME_DESCRIPTION_ADDENDUM?.toString()!}`
   }
+  static get REACT_APP_WORDLE_GAME_METATAG(): string {
+    return `${process.env.REACT_APP_WORDLE_GAME_METATAG?.toString()!}`
+  }
   static get WIN_MESSAGES() {
-    return ['Great Job!', 'Awesome', 'Well done!']
+    return ['Great Job!', 'Awesome', 'Well done!', 'Fantastic!', 'Nice Work!']
   }
   static get GAME_COPIED_MESSAGE() {
     return 'Game copied to clipboard'

@@ -9,7 +9,10 @@
       "request": "launch",
       "name": "Launch Edge against localhost",
       "url": "http://localhost:3000",
-      "webRoot": "${workspaceFolder}"
+      "webRoot": "${workspaceFolder}",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
     },
     {
       "name": "Attach to Node Functions",
@@ -17,6 +20,16 @@
       "request": "attach",
       "port": 9229,
       "preLaunchTask": "func: host start"
+    },
+    {
+      "name": "Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/src",
+      "sourceMapPathOverrides": {
+        "webpack:///src/*": "${webRoot}/*"
+      }
     }
   ]
 }
