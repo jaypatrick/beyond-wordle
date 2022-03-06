@@ -91,6 +91,7 @@ Open [http://localhost](http://localhost) in browser.
 - [Dundle](https://dundle.dunmiffcord.com/): The Office
 - [FFXIVrdle](https://ffxivrdle.com/): Final Fantasy XIV
 - [Harry Potter](https://www.harrypotterwordle.com/): Harry Potter
+- [Heardle](https://www.heardle.app): Songs Intros
 - [JoJodle](https://jojo-news.com/fun/jojodle/): JoJo’s Bizarre Adventure
 - [Mahjong Handle](https://mahjong-handle.update.sh/): Mahjong Hands
 - [Filmle](https://filmle.now.sh/): Movie titles
