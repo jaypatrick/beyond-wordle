@@ -1,9 +1,9 @@
 <!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>wordle-wthout-limits</title><meta name="description" content="Documentation for wordle-wthout-limits"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">wordle-wthout-limits</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>wordle-wthout-limits</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
-<a href="#typescript-wordle-with-react" id="typescript-wordle-with-react" style="color: inherit; text-decoration: none;">
-  <h1>Typescript Wordle with React</h1>
+<a href="#typescript-wordle-beyond-wordle-39continuous-play39-mode-coming-soon" id="typescript-wordle-beyond-wordle-39continuous-play39-mode-coming-soon" style="color: inherit; text-decoration: none;">
+  <h1>Typescript Wordle: Beyond Wordle (&#39;continuous play&#39; mode coming soon!)</h1>
 </a>
 <p>This is a Typescript + React version of Wordle, with a simple REST backend coming soon to allow for multiple puzzles per day, swapping out dictionaries, and making localization easier. Ultimately this will be built out entirely as a REST backend to provide configurable puzzles as a service.</p>
-<p><a href="https://wordle.jaysonknight.com/"><strong>Try out the demo!</strong></a></p>
+<p><a href="https://wordle.jaysonknight.com/"><strong>Try out the demo!</strong></a> (please note that this package is a work in progress)</p>
 
 <a href="#build-and-run" id="build-and-run" style="color: inherit; text-decoration: none;">
   <h2>Build and run</h2>
@@ -121,6 +121,7 @@
 <li><a href="https://jazle.quest/">Jazle</a>: Javascript</li>
 <li><a href="https://www.mathler.com/">Mathler</a>: Find the solution that equals X</li>
 <li><a href="https://plingbang.github.io/morsel/">Morsel</a>: Morse</li>
+<li><a href="https://nerdlegame.com/">Nerdle</a>: Math equations</li>
 <li><a href="https://rbrignall.github.io/numble/">Numble</a>: Maths</li>
 <li><a href="https://opsle.vercel.app/">Opsle</a>: Ops</li>
 <li><a href="https://passwordle.sp8c3.com/">Passwordle</a>: Passwords</li>
@@ -141,17 +142,13 @@
   <h3>How can I change the length of a guess?</h3>
 </a>
 <ul>
-<li>Update the <code>MAX_WORD_LENGTH</code> variable in <a href="src/constants/settings.ts">src/constants/settings.ts</a> to the desired length.</li>
-<li>Update the <code>WORDS</code> array in <a href="src/constants/wordlist.ts">src/constants/wordlist.ts</a> to only include words of the new length.</li>
-<li>Update the <code>VALID_GUESSES</code> array in <a href="src/constants/validGuesses.ts">src/constants/validGuesses.ts</a> arrays to only include words of the new length.</li>
+<li>Update the <code>MAX_WORD_LENGTH</code> variable in <a href="src/constants/settings.ts">src/constants/settings.ts</a> to the desired length. Currently, it defaults to 5 (which is the length of words in the hardcoded dictionary). Once the WordsApi (&#39;beagle&#39; release) backend is complete, this can hypothetically be any value so long as the backend dictionary contains those words.</li>
+<li>Update the <code>WORDS</code> array in <a href="src/constants/wordlist.ts">src/constants/wordlist.ts</a> to only include words of the new length. Once the WordsApi is complete, there will be no need for this, except to mirror the existing list for &quot;once a day&quot; mode.</li>
+<li>Update the <code>VALID_GUESSES</code> array in <a href="src/constants/validGuesses.ts">src/constants/validGuesses.ts</a> arrays to only include words of the new length. As with the above, this will go away for continuous mode once WordsApi (&#39;beagle&#39; release) is complete. Will be kept in another format for &quot;once a day&quot; mode to keep with existing lists.</li>
 </ul>
 
-<a href="#how-can-i-create-a-version-in-another-language" id="how-can-i-create-a-version-in-another-language" style="color: inherit; text-decoration: none;">
-  <h3>How can I create a version in another language?</h3>
-</a>
-
-<a href="#more-streamlined-localization-process-coming-soon" id="more-streamlined-localization-process-coming-soon" style="color: inherit; text-decoration: none;">
-  <h4>(more streamlined localization process coming soon)</h4>
+<a href="#how-can-i-create-a-version-in-another-language--localization-engine-coming-soon-" id="how-can-i-create-a-version-in-another-language--localization-engine-coming-soon-" style="color: inherit; text-decoration: none;">
+  <h3>How can I create a version in another language? *** Localization engine coming soon! ***</h3>
 </a>
 <ul>
 <li>In <a href=".env">.env</a>:<ul>

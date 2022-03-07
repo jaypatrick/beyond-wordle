@@ -1,76 +1,183 @@
+/**
+ * @module Builds the parameters for the WordsApi search query
+ */
+
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { IApiRequestConfig } from './IApiRequestConfig'
 import { IWord } from './models/IWord'
 
-// TAKEN FROM https://rapidapi.com/dpventures/api/wordsapi/
-// THIS CLASS BUILDS THE URL AFTER THE BASE URL
+/**
+ * @class
+ * common fragments: wordapi.com/x/y/z/?<V>
+ * URL looks like wordApi.com/words/{word}/Z
+ * TAKEN FROM [Words API](https://rapidapi.com/dpventures/api/wordsapi/)
+ * THIS CLASS BUILDS THE QUERY PRAMS AFTER THE BASE URL
+ */
 export class wordsRequestParameters {
   // common fragments: wordapi.com/x/y/z/?<V>
   // URL looks like wordApi.com/words/{word}/Z
 
+  /**
+   * @constructor
+   * @param wordToDefine
+   * @param config
+   */
   constructor(public wordToDefine: IWord, public config?: IApiRequestConfig) {}
 
-  // Y = word to define in URL
-  words: string = 'words' // x    wordapi.com/words/<wordToDefine>/Z
-  synonyms: string = 'synonyms' // z    wordapi.com/words/<wordToDefine>synonyms
-  definitions: string = 'definitions' // z    wordapi.com/words/<wordToDefine>/definitions
-  examples: string = 'examples' // z    wordapi.com/words/<wordToDefine>/examples
-  rhymes: string = 'rhymes' // z    wordapi.com/words/<wordToDefine>/rhymes
-  antonyms: string = 'antonyms' // z    wordapi.com/words/<wordToDefine>/antonyms
-  pronunciation: string = 'pronunciation' // z    wordapi.com/words/<wordToDefine>/pronunciation
-  syllables: string = 'syllables' // z    wordapi.com/words/<wordToDefine>/syllables
-  frequency: string = 'frequency' // z    wordapi.com/words/<wordToDefine>/frequency
+  /**
+   * @field
+   * @description wordapi.com/WORDS/<wordToDefine>/Z Sets the 'words' keyword in X from URL template
+   */
+  words: string = 'words'
 
-  // V = RANDOM (can be used with word length)
-  random: boolean = true // V    wordapi.com/words/<wordToDefine>/?random={random.value}
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>synonyms Sets the 'synonym' keyword in Z from the URL template
+   */
+  synonyms: string = 'synonyms'
 
-  // types of drill-downs, USE URLPArameters for fragments.
-  // SEARCH fragments
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/definitions Sets the 'definitions' keyword in Z from the URL template
+   */
+  definitions: string = 'definitions'
+
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/examples Sets the 'examples' keyword in Z from the URL template
+   */
+  examples: string = 'examples'
+
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/rhymes Sets the 'rhymes' keyword in Z from the URL template
+   */
+  rhymes: string = 'rhymes'
+
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/antonyms Sets the 'antonyms' keyword in Z from the URL template
+   */
+  antonyms: string = 'antonyms'
+
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/pronunciation Sets the 'pronunciation' keyword in Z from the URL template
+   */
+  pronunciation: string = 'pronunciation'
+
+  /**
+   * @field
+   * @description wordapi.com/words/<wordToDefine>/syllables Sets the 'synonyms' keyword in Z from the URL template
+   */
+  syllables: string = 'syllables'
+
+  /**
+   * @field wordapi.com/words/<wordToDefine>/frequency
+   * Sets the 'frequency' keyword in Z from the URL template
+   * NOTE: This query param dictates difficulty - Higher values are more common words
+   * @description The minimum frequency score of words to return. You can use this to limit your search to words that people are familiar with (like "go", with a frequency of 6.98). The range is from 1.74 - 8.03.
+   */
+  frequency: string = 'frequency' // z
+
+  /**
+   * @field
+   * @description V = RANDOM (can be used with word length) wordapi.com/words/<wordToDefine>/?random={random.value}
+   */
+  random: boolean = true
+
+  /**
+   * @field types of drill-downs, USE URLPArameters for fragments.
+   * @description Find words whose letters match the regular expression.
+   */
   letterPattern?: string = '^a.{4}$'
-  // Find words whose letters match the regular expression.
 
+  /**
+   * @field
+   * @description Find words whose pronunciation matches the regular expression.
+   */
   pronunciationPattern: string = '.*æm$'
-  // Find words whose pronunciation matches the regular expression.
 
+  /**
+   * @field
+   * @description The matching word must have at least one definition with this part of speech.
+   */
   partOfSpeech?: string
-  // The matching word must have at least one definition with this part of speech.
 
+  /**
+   * @field
+   * @description The minimum number of letters the word must have.
+   */
   lettersMin?: string
-  // The minimum number of letters the word must have.
 
+  /**
+   * @field The number of letters the word must have.
+   * @description This parameter sets the size of the board, e.g. 5 letters, 6 letters, etc
+   */
   letters?: string
-  // The number of letters the word must have.
 
+  /**
+   * @field
+   * @description The maximum number of letters the word can have.
+   */
   lettersMax?: string
-  // The maximum number of letters the word can have.
 
+  /**
+   * @field
+   * @description The maximum number of phonemes (sounds) the word can have.
+   */
   soundsmax?: string
-  // The maximum number of phonemes (sounds) the word can have.
 
+  /**
+   * @field The number of phonemes (sounds) the word mush have.
+   */
   sounds?: string
-  // The number of phonemes (sounds) the word mush have.
 
+  /**
+   * @field
+   * @description The minimum number of phonemes (sounds) the word can have.
+   */
   soundsMin?: string
-  // The minimum number of phonemes (sounds) the word can have.
 
+  /**
+   * @field
+   * @description The minimum number of syllables the word can have.
+   */
   syllablesMin?: string
-  // The minimum number of syllables the word can have.
 
+  /**
+   * @field
+   * @description The maximum number of syllables the word can have.
+   */
   syllablesMax?: string
-  // The maximum number of syllables the word can have.
 
+  /**
+   * @field
+   * @description The number of results to return per page. Must be between 1 and 100. Default is 100.
+   */
   limit?: number = 100
-  // The number of results to return per page. Must be between 1 and 100. Default is 100.
 
+  /**
+   * @field
+   * @description The page of results to return. The default is page 1.
+   */
   page?: number = 1
-  // The page of results to return. The default is page 1.
 
+  /**
+   * @field
+   * @description The minimum frequency score of words to return. You can use this to limit your search to words that people are familiar with (like "go", with a frequency of 6.98). The range is from 1.74 - 8.03.
+   */
   frequencymin?: string
-  // The minimum frequency score of words to return. You can use this to limit your search to words that people are familiar with (like "go", with a frequency of 6.98). The range is from 1.74 - 8.03.
 
+  /**
+   * @field
+   * @description The maximum frequency score of words to return. You can use this to limit your search to words that aren't seen as frequently (like "zygote", with a frequency of 2.55). The range is from 1.74 - 8.03.
+   */
   frequencymax?: string
-  // The maximum frequency score of words to return. You can use this to limit your search to words that aren't seen as frequently (like "zygote", with a frequency of 2.55). The range is from 1.74 - 8.03.
 
+  /**
+   * @field
+   * @description Find words that have at least one instance of the detail type. See the documentation for Word Details for a complete list of detail types you can search for.
+   */
   hasDetails?: string
-  // Find words that have at least one instance of the detail type. See the documentation for Word Details for a complete list of detail types you can search for.
 }

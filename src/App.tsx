@@ -28,8 +28,10 @@ import { AlertContainer } from './components/alerts/AlertContainer'
 import { useAlert } from './context/AlertContext'
 import { Navbar } from './components/navbar/Navbar'
 
-/*
- * MAIN ENTRY POINT OF APP
+/**
+ * The main entry point of the application
+ *
+ * @public
  */
 function App() {
   const prefersDarkMode = window.matchMedia(

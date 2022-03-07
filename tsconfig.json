@@ -29,7 +29,7 @@
     "pretty": true
   },
   "typedocOptions": {
-    "entryPoints": ["src/app.tsx"],
+    "entryPoints": ["src/**/*"],
     "out": "docs"
   },
   "include": ["src"]
