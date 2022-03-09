@@ -18,6 +18,7 @@ type Props = {
   isHardMode: boolean
   isDarkMode: boolean
   isHighContrastMode: boolean
+  numberOfGuessesMade: number
 }
 
 export const StatsModal = ({
@@ -31,6 +32,7 @@ export const StatsModal = ({
   isHardMode,
   isDarkMode,
   isHighContrastMode,
+  numberOfGuessesMade,
 }: Props) => {
   if (gameStats.totalGames <= 0) {
     return (
@@ -53,7 +55,10 @@ export const StatsModal = ({
       <h4 className="text-lg leading-6 font-medium text-gray-900 dark:text-gray-100">
         {Strings.GUESS_DISTRIBUTION_TEXT}
       </h4>
-      <Histogram gameStats={gameStats} />
+      <Histogram
+        gameStats={gameStats}
+        numberOfGuessesMade={numberOfGuessesMade}
+      />
       {(isGameLost || isGameWon) && (
         <div className="mt-5 sm:mt-6 columns-2 dark:text-white">
           <div>
