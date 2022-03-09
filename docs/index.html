@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>wordle-wthout-limits</title><meta name="description" content="Documentation for wordle-wthout-limits"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">wordle-wthout-limits</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>wordle-wthout-limits</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>wordle-wthout-limits</title><meta name="description" content="Documentation for wordle-wthout-limits"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">wordle-wthout-limits</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1> wordle-wthout-limits</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography">
 <a href="#typescript-wordle-beyond-wordle-39continuous-play39-mode-coming-soon" id="typescript-wordle-beyond-wordle-39continuous-play39-mode-coming-soon" style="color: inherit; text-decoration: none;">
   <h1>Typescript Wordle: Beyond Wordle (&#39;continuous play&#39; mode coming soon!)</h1>
 </a>
@@ -23,14 +23,14 @@
 <a href="#development" id="development" style="color: inherit; text-decoration: none;">
   <h4>Development</h4>
 </a>
-<pre><code class="language-bash"><span class="hl-0">$&gt; docker build -t game:dev </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 3000:3000 game:dev</span>
+<pre><code class="language-bash"><span class="hl-0">$&gt; docker build -t reactle:dev -f docker/Dockerfile </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 3000:3000 --name reactle-dev reactle:dev</span>
 </code></pre>
 <p>Open <a href="http://localhost:3000">http://localhost:3000</a> in browser.</p>
 
 <a href="#production" id="production" style="color: inherit; text-decoration: none;">
   <h4>Production</h4>
 </a>
-<pre><code class="language-bash"><span class="hl-0">$&gt; docker build --target=prod -t game:prod </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 80:80 game:prod</span>
+<pre><code class="language-bash"><span class="hl-0">$&gt; docker build --target=prod -t reactle:prod -f docker/Dockerfile </span><span class="hl-1">.</span><br/><span class="hl-0">$&gt; docker run -d -p 80:8080  --name reactle-prod reactle:prod</span>
 </code></pre>
 <p>Open <a href="http://localhost">http://localhost</a> in browser.</p>
 
@@ -80,6 +80,7 @@
 <li><a href="https://zedaizd.github.io/zh-char-puzzle/">字知之明</a>: Traditional Chinese</li>
 <li><a href="https://belorin.github.io/">꼬들 - 한국어</a>: Korean</li>
 <li><a href="https://nakosung.github.io/wordle/">한글 풀어쓰기 5자</a>: Korean</li>
+<li><a href="https://buddhistuniversity.net/wordle-thai/">ไทย</a>: Thai</li>
 </ul>
 
 <a href="#fun-themes" id="fun-themes" style="color: inherit; text-decoration: none;">
@@ -96,6 +97,7 @@
 <li><a href="https://dundle.dunmiffcord.com/">Dundle</a>: The Office</li>
 <li><a href="https://ffxivrdle.com/">FFXIVrdle</a>: Final Fantasy XIV</li>
 <li><a href="https://www.harrypotterwordle.com/">Harry Potter</a>: Harry Potter</li>
+<li><a href="https://www.heardle.app">Heardle</a>: Songs Intros</li>
 <li><a href="https://jojo-news.com/fun/jojodle/">JoJodle</a>: JoJo’s Bizarre Adventure</li>
 <li><a href="https://mahjong-handle.update.sh/">Mahjong Handle</a>: Mahjong Hands</li>
 <li><a href="https://filmle.now.sh/">Filmle</a>: Movie titles</li>
@@ -117,6 +119,7 @@
 </a>
 <ul>
 <li><a href="https://github.com/asirota/wordle-ai">AI-powered</a>: Includes an AI component</li>
+<li><a href="https://github.com/necropolina/colordle">Colordle</a>: Guess the hexadecimal color code of the background</li>
 <li><a href="https://andrewholding.github.io/gene-wordle/">Genel</a>: Gene symbols</li>
 <li><a href="https://jazle.quest/">Jazle</a>: Javascript</li>
 <li><a href="https://www.mathler.com/">Mathler</a>: Find the solution that equals X</li>
@@ -127,10 +130,12 @@
 <li><a href="https://passwordle.sp8c3.com/">Passwordle</a>: Passwords</li>
 <li><a href="https://converged.yt/primel/">Primel</a>: Prime numbers</li>
 <li><a href="https://qwordle.bhat.ca/">Qwordle</a>: Quantum version of Wordle (uses entangled word-pairs)</li>
+<li><a href="https://deduckproject.github.io/quantle/">Quantle</a>: Another quantum variant where guesses are quantum equations</li>
 <li><a href="https://furstenheim.github.io/react-wordle/">Rundle</a>: Like wordle, but only last three guesses are considered.</li>
 <li><a href="https://stockle.win/">Stockle</a>: Guess the stock or ETF</li>
 <li><a href="https://nezza.github.io/syscordle/">Syscordle</a>: SYSCALL</li>
 <li><a href="https://unlocodle.collabital.com/">UNLOCOdle</a>: UNLOCODEs</li>
+<li><a href="https://orisenbazuru.github.io/visionle/">Visionle</a>: Guess the label of randomly chosen image from ImageNet/ImageNet-Sketch dataset (Machine learning)</li>
 </ul>
 <p><em>Want to add one to the list? Just make a pull request or <a href="https://github.com/cwackerfuss/react-wordle/issues/120">let us know via a comment here</a></em></p>
 
@@ -187,4 +192,4 @@
 <li>Create a new website with Plausible Analytics with a given domain, e.g. <code>example.app</code></li>
 <li>In <a href=".env">.env</a>, add <code>REACT_APP_PLAUSIBLE_DOMAIN=example.app</code></li>
 </ul>
-</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul><li class="tsd-kind-function"><a href="modules.html#default" class="tsd-kind-icon">default</a></li></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>
