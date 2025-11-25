@@ -10,10 +10,20 @@ export async function httpTrigger(
   context: InvocationContext,
 ): Promise<HttpResponseInit> {
   context.log('HTTP trigger function processed a request.')
-  const name =
-    request.query.get('name') || (await request.text()).includes('name')
-      ? JSON.parse(await request.text()).name
-      : null
+  let name = request.query.get('name')
+  
+  if (!name) {
+    try {
+      const body = await request.text()
+      if (body) {
+        const parsed = JSON.parse(body)
+        name = parsed.name
+      }
+    } catch {
+      // Body parsing failed, name remains null
+    }
+  }
+  
   const responseMessage = name
     ? 'Hello, ' +
       name +
