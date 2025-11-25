@@ -32,7 +32,7 @@ export const shareStatus = (
       navigator.share(shareData)
       shareSuccess = true
     }
-  } catch (error) {
+  } catch {
     shareSuccess = false
   }
 
