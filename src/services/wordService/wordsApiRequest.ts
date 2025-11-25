@@ -26,7 +26,10 @@ export class WordsApiRequest {
   // candidate #1
   public async createRequest(apiRequestConfig?: IApiRequestConfig) {
     axios
-      .request(this.requestConfig ?? (apiRequestConfig as AxiosRequestConfig))
+      .request(
+        this.requestConfig ??
+          (apiRequestConfig as unknown as AxiosRequestConfig),
+      )
       .then(function (response) {
         console.log(response.data)
       })
@@ -39,12 +42,12 @@ export class WordsApiRequest {
   // this is part of the chunk of code at
   // https://hashnode.com/post/how-to-use-axios-with-typescript-ckqi62md803s28us1baqyaj4u
   public async getWordApiResponse(
-    config: AxiosRequestConfig
+    config: AxiosRequestConfig,
   ): Promise<Data | ServerError> {
     try {
       const response = await axios.get<Data>(
         Settings.REACT_APP_WORDS_API_BASE_URL,
-        config
+        config,
       )
       return response.data
     } catch (requestError) {

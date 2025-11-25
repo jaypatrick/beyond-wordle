@@ -14,7 +14,7 @@ export class Word implements IWord {
   constructor(
     public id: number,
     public letters: string[],
-    public completed: boolean = false
+    public completed: boolean = false,
   ) {
     this.id = id
     this.letters = letters

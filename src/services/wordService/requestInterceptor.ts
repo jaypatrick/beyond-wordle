@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig, AxiosError } from 'axios'
+import axios, { InternalAxiosRequestConfig, AxiosError } from 'axios'
 import { axiosWordRequestUrlBuilder } from './wordApiSearchParameters'
 
 // Prints "get https://httpbin.org/get"
@@ -8,12 +8,12 @@ await axios.get('https://httpbin.org/get')
 await axios.post('https://httpbin.org/post', {})
 
 axios.interceptors.request.use(
-  (config: AxiosRequestConfig) => {
+  (config: InternalAxiosRequestConfig) => {
     // do something with config
     console.log(`${config.method} ${config.url}`)
     return Promise.resolve(config)
   },
   (error: AxiosError) => {
     return Promise.reject(error)
-  }
+  },
 )

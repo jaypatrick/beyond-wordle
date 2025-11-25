@@ -17,7 +17,7 @@ export class Word implements IWord {
   constructor(
     public id: number,
     public letters: string[],
-    public completed: boolean = false
+    public completed: boolean = false,
   ) {
     this.id = id
     this.letters = letters
@@ -64,7 +64,7 @@ export interface IWordApiRepository {
 export class WordApiServiceCatalog implements IWordApiRepository {
   private wordList: IWord[] = new Array<IWord>(
     new Word(0, ['a', 'l', 'p', 'h', 'a']),
-    new Word(0, ['s', 't', 'i', 'l', 'l'])
+    new Word(0, ['s', 't', 'i', 'l', 'l']),
   )
 
   get(): IWord[] {

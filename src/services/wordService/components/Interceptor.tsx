@@ -3,7 +3,7 @@ import axios from 'axios'
 
 export function Interceptor() {
   const [errorInterceptor, setErrorInterceptor] = useState<number | undefined>(
-    undefined
+    undefined,
   )
 
   const addErrorInterceptor = () => {
@@ -15,7 +15,7 @@ export function Interceptor() {
       (error) => {
         console.log(error.response)
         return Promise.reject(error)
-      }
+      },
     )
     setErrorInterceptor(errorInterceptor)
   }

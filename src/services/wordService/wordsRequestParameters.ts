@@ -22,7 +22,10 @@ export class wordsRequestParameters {
    * @param wordToDefine
    * @param config
    */
-  constructor(public wordToDefine: IWord, public config?: IApiRequestConfig) {}
+  constructor(
+    public wordToDefine: IWord,
+    public config?: IApiRequestConfig,
+  ) {}
 
   /**
    * @field
