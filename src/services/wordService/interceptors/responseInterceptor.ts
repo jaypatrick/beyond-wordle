@@ -12,5 +12,5 @@ axios.interceptors.response.use(
   },
   (error: AxiosError) => {
     return Promise.reject(error)
-  }
+  },
 )

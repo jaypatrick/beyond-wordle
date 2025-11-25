@@ -35,7 +35,7 @@ import { Navbar } from './components/navbar/Navbar'
  */
 function App() {
   const prefersDarkMode = window.matchMedia(
-    '(prefers-color-scheme: dark)'
+    '(prefers-color-scheme: dark)',
   ).matches
 
   const { showError: showErrorAlert, showSuccess: showSuccessAlert } =
@@ -51,11 +51,11 @@ function App() {
     localStorage.getItem('theme')
       ? localStorage.getItem('theme') === 'dark'
       : prefersDarkMode
-      ? true
-      : false
+        ? true
+        : false,
   )
   const [isHighContrastMode, setIsHighContrastMode] = useState(
-    getStoredIsHighContrastMode()
+    getStoredIsHighContrastMode(),
   )
   const [isRevealing, setIsRevealing] = useState(false)
   const [guesses, setGuesses] = useState<string[]>(() => {
@@ -81,7 +81,7 @@ function App() {
   const [isHardMode, setIsHardMode] = useState(
     localStorage.getItem('gameMode')
       ? localStorage.getItem('gameMode') === 'hard'
-      : false
+      : false,
   )
   useEffect(() => {
     ;(async function () {
@@ -175,7 +175,7 @@ function App() {
 
   const onDelete = () => {
     setCurrentGuess(
-      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join('')
+      new GraphemeSplitter().splitGraphemes(currentGuess).slice(0, -1).join(''),
     )
   }
 

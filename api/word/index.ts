@@ -1,19 +1,40 @@
-import { AzureFunction, Context, HttpRequest } from '@azure/functions'
+import {
+  app,
+  HttpRequest,
+  HttpResponseInit,
+  InvocationContext,
+} from '@azure/functions'
 
-const httpTrigger: AzureFunction = async function (
-  context: Context,
-  req: HttpRequest
-): Promise<void> {
+export async function httpTrigger(
+  request: HttpRequest,
+  context: InvocationContext,
+): Promise<HttpResponseInit> {
   context.log('HTTP trigger function processed a request.')
-  const name = req.query.name || (req.body && req.body.name)
+  let name = request.query.get('name')
+  
+  if (!name) {
+    try {
+      const body = await request.text()
+      if (body) {
+        const parsed = JSON.parse(body)
+        name = parsed.name
+      }
+    } catch {
+      // Body parsing failed, name remains null
+    }
+  }
+  
   const responseMessage = name
-    ? 'Hello, ' + name + '. This HTTP triggered function executed successfully.'
+    ? 'Hello, ' +
+      name +
+      '. This HTTP triggered function executed successfully.'
     : 'This HTTP triggered function executed successfully. Pass a name in the query string or in the request body for a personalized response.'
 
-  context.res = {
-    // status: 200, /* Defaults to 200 */
-    body: responseMessage,
-  }
+  return { body: responseMessage }
 }
 
-export default httpTrigger
+app.http('word', {
+  methods: ['GET', 'POST'],
+  authLevel: 'anonymous',
+  handler: httpTrigger,
+})

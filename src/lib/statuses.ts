@@ -9,7 +9,7 @@ export enum CharStatusEnum {
 }
 
 export const getStatuses = (
-  guesses: string[]
+  guesses: string[],
 ): { [key: string]: CharStatus } => {
   const charObj: { [key: string]: CharStatus } = {}
   const splitSolution = unicodeSplit(solution)
@@ -67,7 +67,7 @@ export const getGuessStatuses = (guess: string): CharStatus[] => {
 
     // now we are left with "present"s
     const indexOfPresentChar = splitSolution.findIndex(
-      (x, index) => x === letter && !solutionCharsTaken[index]
+      (x, index) => x === letter && !solutionCharsTaken[index],
     )
 
     if (indexOfPresentChar > -1) {

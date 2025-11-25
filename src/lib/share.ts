@@ -15,7 +15,7 @@ export const shareStatus = (
   isHardMode: boolean,
   isDarkMode: boolean,
   isHighContrastMode: boolean,
-  handleShareToClipboard: () => void
+  handleShareToClipboard: () => void,
 ) => {
   const textToShare =
     `${Strings.GAME_TITLE} ${solutionIndex} ${lost ? 'X' : guesses.length}/${

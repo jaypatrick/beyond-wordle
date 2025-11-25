@@ -11,7 +11,10 @@ export class axiosWordRequestUrlBuilder {
   // common fragments: wordapi.com/x/y/z/?<V>
   // URL looks like wordApi.com/words/{word}/Z
 
-  constructor(public wordToDefine: IWord, public config?: IApiRequestConfig) {}
+  constructor(
+    public wordToDefine: IWord,
+    public config?: IApiRequestConfig,
+  ) {}
 
   // Y = word to define in URL
   words: string = 'words' // x    wordapi.com/words/<wordToDefine>/Z

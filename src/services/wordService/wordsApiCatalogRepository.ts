@@ -9,7 +9,7 @@ import { IWord, Word } from './models/IWord'
 export class WordsApiCatalogRepository implements IWordsApiRepository {
   private wordList: IWord[] = new Array<IWord>(
     new Word(0, ['a', 'l', 'p', 'h', 'a']),
-    new Word(0, ['s', 't', 'i', 'l', 'l'])
+    new Word(0, ['s', 't', 'i', 'l', 'l']),
   )
 
   get(): IWord[] {
