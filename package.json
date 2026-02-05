@@ -5,7 +5,7 @@
   "version": "0.8.0",
   "private": true,
   "dependencies": {
-    "@azure/functions": "^4.9.0",
+    "@azure/functions": "^4.11.1",
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
     "axios": "^1.7.9",
