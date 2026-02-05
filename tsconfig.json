@@ -2,7 +2,7 @@
   "compilerOptions": {
     "target": "ES2022",
     "lib": ["dom", "dom.iterable", "ES2023"],
-    "outDir": "./build",
+    "outDir": "./dist",
     "allowJs": false,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -10,7 +10,7 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
+    "module": "ESNext",
     "moduleResolution": "bundler",
     "allowUnreachableCode": false,
     "declaration": true,
@@ -27,11 +27,14 @@
     "emitDecoratorMetadata": true,
     "jsx": "react-jsx",
     "pretty": true,
-    "verbatimModuleSyntax": false
+    "verbatimModuleSyntax": false,
+    "types": ["vite/client", "vitest/globals"],
+    "useDefineForClassFields": true
   },
   "typedocOptions": {
     "entryPoints": ["src/**/*"],
     "out": "docs"
   },
-  "include": ["src"]
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
 }

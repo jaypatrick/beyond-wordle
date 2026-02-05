@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="<%= REACT_APP_WORDLE_GAME_DESCRIPTION %>" />
+    <link
+      rel="apple-touch-icon"
+      href="/static/images/logo192.png"
+    />
+    <link
+      rel="icon shortcut"
+      href="/static/images/logo32.png"
+      sizes="3232"
+    />
+    <link rel="manifest" href="/manifest.json" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="<%= REACT_APP_WORDLE_GAME_NAME %>"
+    />
+    <meta name="application-name" content="<%= REACT_APP_WORDLE_GAME_NAME %>" />
+
+    <title>
+      <%= REACT_APP_WORDLE_GAME_NAME %> <%= REACT_APP_WORDLE_GAME_DESCRIPTION %>
+    </title>
+
+    <% if (NODE_ENV === 'production' &&
+    REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID) { %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=<%= REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID %>"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || []
+      function gtag() {
+        dataLayer.push(arguments)
+      }
+      gtag('js', new Date())
+
+      gtag('config', '<%= REACT_APP_WORDLE_GOOGLE_MEASUREMENT_ID %>')
+    </script>
+    <% } %> <% if (NODE_ENV === 'production' &&
+    REACT_APP_PLAUSIBLE_DOMAIN) { %>
+    <!-- Plausible Analytics -->
+    <script
+      defer
+      data-domain="<%= REACT_APP_PLAUSIBLE_DOMAIN %>"
+      src="https://plausible.io/js/plausible.js"
+    ></script>
+    <% } %>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/src/index.tsx"></script>
+  </body>
+</html>
