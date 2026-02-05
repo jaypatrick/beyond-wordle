@@ -42,8 +42,7 @@ export const getGuessStatuses = (guess: string): CharStatus[] => {
   const splitSolution = unicodeSplit(solution)
   const splitGuess = unicodeSplit(guess)
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const solutionCharsTaken = splitSolution.map((_) => false)
+  const solutionCharsTaken = splitSolution.map(() => false)
 
   const statuses: CharStatus[] = Array.from(Array(guess.length))
 

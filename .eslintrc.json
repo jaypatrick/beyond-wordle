@@ -1,11 +1,14 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
     "plugin:@typescript-eslint/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -16,7 +19,7 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "react-refresh", "@typescript-eslint"],
   "rules": {
     // never check for semicolon usage since some tooling puts them in automatically.
     // they get stripped out during the final compile process anyways
@@ -28,7 +31,20 @@
     "react/jsx-filename-extension": [
       1,
       { "extensions": [".js", ".jsx", "ts", "tsx"] }
-    ] //should add ".ts" if typescript project
+    ],
+    "react-refresh/only-export-components": [
+      "warn",
+      { "allowConstantExport": true }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "warn",
+      { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
+    ]
   },
-  "ignorePatterns": ["src/**/*.test.ts", "build/*"]
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "ignorePatterns": ["src/**/*.test.ts", "dist/*", "build/*"]
 }

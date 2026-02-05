@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 export class Strings {
   static get GAME_TITLE(): string {
     return `${this.GAME_NAME} ${this.GAME_DESCRIPTION_ADDENDUM}`
