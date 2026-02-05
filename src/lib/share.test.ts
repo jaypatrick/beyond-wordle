@@ -22,7 +22,7 @@ describe('generateEmojiGrid', () => {
     expect(gridParts[1]).toBe('AAAAA')
     expect(gridParts[2]).toBe('CCCCC')
   })
-  
+
   test('generates grid correctly', () => {
     const guesses = ['ABCDE']
     const tiles = ['C', 'P', 'A'] // Correct, Present, Absent

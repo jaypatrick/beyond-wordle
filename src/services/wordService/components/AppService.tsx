@@ -36,7 +36,6 @@ export default function AppService() {
 
   useEffect(() => {
     if (status === 'idle') {
-      // eslint-disable-next-line @typescript-eslint/no-extra-semi
       ;(async () => {
         setStatus('pending')
         const res = await getData()

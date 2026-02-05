@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
-/* eslint-disable @typescript-eslint/no-non-null-assertion */
 import { solution } from '../lib/words'
 
 export class Settings {
@@ -10,7 +8,9 @@ export class Settings {
     const maxChallengesOffset = parseInt(
       this.REACT_APP_WORDLE_MAX_CHALLENGES || '0',
     )
-    return solution.length + (isNaN(maxChallengesOffset) ? 0 : maxChallengesOffset)
+    return (
+      solution.length + (isNaN(maxChallengesOffset) ? 0 : maxChallengesOffset)
+    )
   }
   static get REACT_APP_WORDLE_MAX_CHALLENGES() {
     return (
