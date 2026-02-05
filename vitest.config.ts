@@ -21,6 +21,11 @@ export default defineConfig({
         '**/*.test.{ts,tsx}',
       ],
     },
+    env: {
+      REACT_APP_WORDLE_MAX_CHALLENGES: '1',
+      REACT_APP_WORDLE_GAME_NAME: 'Wordle',
+      REACT_APP_WORDLE_GAME_DESCRIPTION: 'Without Limits',
+    },
   },
   resolve: {
     alias: {

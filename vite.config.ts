@@ -107,7 +107,9 @@ export default defineConfig(({ mode }) => {
       port: 8080,
     },
     define: {
-      'process.env': env,
+      'process.env.NODE_ENV': JSON.stringify(mode),
+      'process.env.REACT_APP_WORDLE_MAX_CHALLENGES':
+        JSON.stringify(env.REACT_APP_WORDLE_MAX_CHALLENGES) || '"0"',
     },
   }
 })

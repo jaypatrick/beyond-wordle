@@ -7,10 +7,17 @@ export class Settings {
     return solution.length
   }
   static get MAX_CHALLENGES() {
-    return solution.length + parseInt(this.REACT_APP_WORDLE_MAX_CHALLENGES)
+    const maxChallengesOffset = parseInt(
+      this.REACT_APP_WORDLE_MAX_CHALLENGES || '0',
+    )
+    return solution.length + (isNaN(maxChallengesOffset) ? 0 : maxChallengesOffset)
   }
   static get REACT_APP_WORDLE_MAX_CHALLENGES() {
-    return process.env.REACT_APP_WORDLE_MAX_CHALLENGES?.toString()!
+    return (
+      process.env.REACT_APP_WORDLE_MAX_CHALLENGES?.toString() ||
+      import.meta.env.REACT_APP_WORDLE_MAX_CHALLENGES?.toString() ||
+      '0'
+    )
   }
   static get ALERT_TIME_MS() {
     return 2000
