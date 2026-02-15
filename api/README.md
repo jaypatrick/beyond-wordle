@@ -9,6 +9,7 @@ This API provides word fetching capabilities for the game:
 - **Daily Word**: Get the word of the day based on a deterministic algorithm
 - **Random Word**: Fetch a random word from the word list
 - **Word Validation**: Validate if a guessed word is in the valid word list
+- **Word Statistics**: Get database statistics (word counts)
 
 ## API Endpoints
 
@@ -61,6 +62,21 @@ Validates if a word is in the valid word list.
   "error": "Missing word parameter"
 }
 ```
+
+### GET /api/word?action=data
+
+Returns statistics about the word database.
+
+**Response:**
+```json
+{
+  "answerCount": 2315,
+  "validGuessCount": 10657
+}
+```
+
+- `answerCount`: Total number of words that can be daily/random answers
+- `validGuessCount`: Total number of valid words accepted as guesses
 
 ## Development
 

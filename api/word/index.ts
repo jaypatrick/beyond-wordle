@@ -120,6 +120,19 @@ export async function httpTrigger(
         }
       }
       
+      case 'data': {
+        return {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            answerCount: WORDS.length,
+            validGuessCount: VALID_GUESSES.length,
+          }),
+        }
+      }
+      
       default: {
         return {
           status: 400,
@@ -127,7 +140,7 @@ export async function httpTrigger(
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            error: 'Invalid action. Supported actions: daily, random, validate',
+            error: 'Invalid action. Supported actions: daily, random, validate, data',
           }),
         }
       }
