@@ -77,6 +77,24 @@ describe('Word API', () => {
     })
   })
 
+  describe('GET /api/word?action=data', () => {
+    it('should return word database statistics', async () => {
+      const request = createMockRequest('http://localhost/api/word?action=data')
+      const response = await httpTrigger(request, mockContext)
+      
+      expect(response.status).toBe(200)
+      expect(response.headers?.['Content-Type']).toBe('application/json')
+      
+      const body = JSON.parse(response.body as string)
+      expect(body).toHaveProperty('answerCount')
+      expect(body).toHaveProperty('validGuessCount')
+      expect(typeof body.answerCount).toBe('number')
+      expect(typeof body.validGuessCount).toBe('number')
+      expect(body.answerCount).toBeGreaterThan(0)
+      expect(body.validGuessCount).toBeGreaterThan(0)
+    })
+  })
+
   describe('GET /api/word?action=invalid', () => {
     it('should return error for invalid action', async () => {
       const request = createMockRequest('http://localhost/api/word?action=invalid')
